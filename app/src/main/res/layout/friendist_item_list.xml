@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:gravity="center"
+    android:id="@+id/friendlist_item_list_linearlayout"
+    >
+
+    <ImageView
+        android:gravity="center"
+        android:id="@+id/friendlist_item_list_imageview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/circle"
+        android:padding="5dp" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/friendlist_item_list_friendid"
+        android:textSize="30dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/friendlist_item_list_friendname"
+        android:textSize="30dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+    <TextView
+        android:gravity="center"
+        android:id="@+id/friendlist_item_list_friend_idx"
+        android:textSize="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+</LinearLayout>

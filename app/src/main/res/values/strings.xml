@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mysnsproject</string>
+    <string name="title_activity_friend_list">FriendListActivity</string>
+    <string name="title_activity_search_friend">SearchFriend</string>
+</resources>
