@@ -88,6 +88,13 @@
             android:src="@drawable/good" />
 
         <ImageView
+            android:id="@+id/profile_post_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/pen" />
+
+        <ImageView
             android:id="@+id/profile_search_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"

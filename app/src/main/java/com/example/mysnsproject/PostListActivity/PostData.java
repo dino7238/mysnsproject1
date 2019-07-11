@@ -9,6 +9,15 @@ public class PostData {
     private int viewType;
     private String likepostnumber;
     private Boolean postlikeid;
+    private String goodcount;
+
+    public String getGoodcount() {
+        return goodcount;
+    }
+
+    public void setGoodcount(String goodcount) {
+        this.goodcount = goodcount;
+    }
 
     public Boolean getPostlikeid() {
         return postlikeid;

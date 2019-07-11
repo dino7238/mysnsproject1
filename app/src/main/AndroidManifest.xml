@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Commnet.CommentEditActivity"></activity>
+        <activity android:name=".chatting.ChatActivity"></activity>
+        <activity android:name=".Commnet.CommentEditActivity" />
         <activity android:name=".Commnet.CommentActivity" />
         <activity android:name=".PosteditActivity" />
         <activity android:name=".PostwriteActivity" />

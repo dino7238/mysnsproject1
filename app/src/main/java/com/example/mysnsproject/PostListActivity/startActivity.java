@@ -249,6 +249,7 @@ public class startActivity extends AppCompatActivity {
         String TAG_postidx = "postidx";
         String TAG_likeid = "likeid";
         String TAG_JSON1 = "asdf";
+        String TAG_goodcount = "goodcount";
 
 
         try {
@@ -288,6 +289,7 @@ public class startActivity extends AppCompatActivity {
                 String posttime = item.getString(TAG_time);
                 String idx = item.getString(TAG_idx);
                 String commentcount = item.getString(TAG_commentcount);
+                String goodcount = item.getString(TAG_goodcount);
 
                 //  String likepostnumber = item.getString(TAG_likepostnumber);
 
@@ -299,6 +301,7 @@ public class startActivity extends AppCompatActivity {
                 postData.setPost_time(posttime);
                 postData.setPost_idx(idx);
                 postData.setCommentcount(commentcount);
+                postData.setGoodcount(goodcount);
 
                 postData.setPostlikeid(false);
 
@@ -383,7 +386,7 @@ public class startActivity extends AppCompatActivity {
             protected TextView post_number;
             protected TextView numberofcomment;
             protected ImageView like_imageviews;
-
+            protected TextView goodcount;
             public CustomViewHolder(@NonNull View itemView) {
                 super(itemView);
                 this.post_commnet = (ImageView) itemView.findViewById(R.id.post_list_item_commetn_imageview);
@@ -396,6 +399,7 @@ public class startActivity extends AppCompatActivity {
                 this.post_number = (TextView) itemView.findViewById(R.id.post_list_item_post_number);
                 this.setting = (ImageView) itemView.findViewById(R.id.post_item_list_ImageView_mysetting);
                 this.numberofcomment = (TextView) itemView.findViewById(R.id.post_list_item_post_comment_numberofcomment);
+                this.goodcount = (TextView) itemView.findViewById(R.id.post_list_item_post_goodcount);
                 // this.like_imageviews.setOnClickListener(this);
                 //이곳에 데이터를 바꾸려고하면 제일 처음 데이터만 설정 할 수 있네?
             }
@@ -426,7 +430,7 @@ public class startActivity extends AppCompatActivity {
             customViewHolder.writer_image.setImageBitmap(new startActivity.startactivity_imageload().getBitmapImg(postDataArrayList.get(i).getWriter_id() + ".jpg"));
             customViewHolder.post_imageviews.setImageBitmap(new startActivity.startactivity_imageload().getBitmapImg(postDataArrayList.get(i).getPost_idx() + ".jpg"));
             customViewHolder.post_number.setText(postDataArrayList.get(i).getPost_idx());
-
+            customViewHolder.goodcount.setText(postDataArrayList.get(i).getGoodcount());
             final int position1 = customViewHolder.getAdapterPosition();
 
 

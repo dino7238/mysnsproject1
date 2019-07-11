@@ -411,7 +411,7 @@ public class CommentActivity extends AppCompatActivity {
             try {
                 URL url = new URL(serverUrl +
                         URLEncoder.encode(imgStr, "utf-8"));
-                // Character is converted to 'UTF-8' to prevent broken
+
                 HttpURLConnection conn = (HttpURLConnection) url
                         .openConnection();
                 conn.setDoInput(true);

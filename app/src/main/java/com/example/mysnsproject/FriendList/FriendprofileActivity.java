@@ -16,7 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mysnsproject.PostListActivity.startActivity;
 import com.example.mysnsproject.R;
+import com.example.mysnsproject.chatting.ChatActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,6 +39,7 @@ public class FriendprofileActivity extends AppCompatActivity {
     private String TAG = "FriendprofileActivity";
     private Button frienddelete;
     private FriendListActivity.FriendListAdapter friendlistAdapter1;
+    private Button friendchat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +49,16 @@ public class FriendprofileActivity extends AppCompatActivity {
         friendname = (TextView) findViewById(R.id.friendprofile_textview_friend_name1);
         friendprofile = (ImageView) findViewById(R.id.friendprofile_image);
         frienddelete = (Button) findViewById(R.id.friendprofile_delete_btn);
+        friendchat = (Button) findViewById(R.id.friendprofile_change_btn);
 
         Intent intent = getIntent();
       //ArrayList<String> temp = intent.getStringArrayListExtra("어레이");
         //Log.d("test", "temp" + temp);
         final String temp1 = intent.getStringExtra("4");//인덱스값 받아오는 부분
         Log.d("고유의 idx값", temp1);
-        String temp2 = intent.getStringExtra("1");//친구 아이디 받아오는 부분
+        final String temp2 = intent.getStringExtra("1");//친구 아이디 받아오는 부분
         Log.d("친구아이디", temp2);
-        String temp3 = intent.getStringExtra("2");//로그인한 유저 아이디 받아오는 부분
+        final String temp3 = intent.getStringExtra("2");//로그인한 유저 아이디 받아오는 부분
         Log.d("로그인한 유저 아이디", temp3);
         String temp4 = intent.getStringExtra("3");//친구 이름 받아오는 부분
         Log.d("친구이름", temp4);
@@ -72,6 +76,18 @@ public class FriendprofileActivity extends AppCompatActivity {
                 Frienddelete frienddeletestart = new Frienddelete();
                 frienddeletestart.execute("http://" + IP_ADDRESS + "/frienddelete.php", temp1);
                 finish();
+            }
+        });
+
+        //친구랑 대화하기
+        friendchat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chatmove = new Intent(getApplicationContext(), ChatActivity.class);
+                chatmove.putExtra("chatid",temp3);
+                chatmove.putExtra("name",temp2);
+                startActivity(chatmove);
+
             }
         });
     }

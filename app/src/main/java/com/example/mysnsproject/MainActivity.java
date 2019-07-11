@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.mysnsproject.PostListActivity.startActivity;
+import com.example.mysnsproject.chatting.ChatActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -35,16 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //친구찾기 버튼
-
-        /*Button searchactivity = (Button) findViewById(R.id.main_friendsearch_btn);
-        searchactivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), FriendListActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
 
         Email = (EditText) findViewById(R.id.LoginEmail);
         Password =(EditText) findViewById(R.id.LoginPassword);
@@ -88,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // setResult를 통해 받아온 요청번호, 상태, 데이터
+        //setResult를 통해 받아온 요청번호, 상태, 데이터
         Log.d("RESULT", requestCode + "");
         Log.d("RESULT", resultCode + "");
         Log.d("RESULT", data + "");
@@ -122,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
             if(result.equals("로그인 성공")) {
                 Intent startactivitymove = new Intent(getApplicationContext(), startActivity.class);
                 startactivitymove.putExtra("name",name);
+
+                new ChatActivity().a();
+
                 startActivity(startactivitymove);
 
                 Log.d("1111111111",name);
